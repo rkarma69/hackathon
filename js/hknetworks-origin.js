@@ -74,7 +74,7 @@ $(function () {
         }
 
         table_body+='</tbody></table>';
-        $("#response").html(table_body);  
+        $("#response").html(table_body);
 
       }
     });
@@ -128,24 +128,8 @@ $(function () {
       data: JSON.stringify(stepButtonData),
       success: function (data) {
         console.log(data);
-        
-        var table_body = '<table border="1" id="example"><thead><tr><th>status</th><th>msg</th></tr></thead><tbody>';
 
-        table_body+='<tr>';
-        table_body +='<td>';
-        table_body += data.status;
-        table_body +='</td>';
-
-        table_body +='<td>';
-        table_body += data.msg;
-        table_body +='</td>';
-
-        table_body+='</tr>';
-
-        table_body+='</tbody></table>';
-        $("#response").html(table_body);
       }
     });
   })
 })
-
