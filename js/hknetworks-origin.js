@@ -1,48 +1,46 @@
 
 $(function () {
-  var userId = "star@star.com";
-  var userPw = "iot123456";
-  var userMac = "600194260a36";
-  var userDeviceId = "615458ebd5f1403fb42ded956d66c2cb";
+  var userId = "soto1935@gmail.com";
+  var userPw = "$jsgj1218H";
+  var userMac = "a020a611fedd";
+  var userDeviceId = "ddc7691862e64ebca2a42554cca76f75";
+  var userDeviceType = 60;
 
-
-  var getDeviceListData = { "userid": userId, "password": userPw }
-  var queryDeviceStatusData = {
+  var upButtonData = { "userid": userId, "password": userPw }
+  var downButtonData = {
     "userid": userId,
     "password": userPw,
     "mac": userMac,
     "deviceId": userDeviceId,
     "irDeviceId": "5695",
+    "deviceType": userDeviceType
   }
 
-  var splugOnCommand = {
+  var stepButtonData = {
     "userid": userId,
     "password": userPw,
     "mac": userMac,
     "deviceId": userDeviceId,
-    "command":{
-          "type":"turnon"
+    "deviceType": userDeviceType,
+    "command":
+      {
+          "type":"ir",
+          "parameter":
+          {
+              "fid":507,
+              "repeat":1
+          }
       }
   }
 
-  var splugOffCommand = {
-    "userid": userId,
-    "password": userPw,
-    "mac": userMac,
-    "deviceId": userDeviceId,
-    "command":{
-          "type":"turnoff"
-      }
-  }
-
-  $("#statusButton").click(function () {
-    console.log("+queryDeviceStatus");
+  $("#upButton").click(function () {
+    console.log("+upButton");
     $.ajax({
-      url: "https://open.hknetworks.kr/smarthome/queryDeviceStatus",
+      url: "https://open.hknetworks.kr/smarthome/getDeviceList",
       type: 'POST',
       dataType: "json", // 옵션이므로 JSON으로 받을게 아니면 안써도 됨
       contentType: "application/json; charset=utf-8",
-      data: JSON.stringify(queryDeviceStatusData),
+      data: JSON.stringify(upButtonData),
       success: function (data) {
         console.log(data);
         var list = data.deviceList;
@@ -76,20 +74,20 @@ $(function () {
         }
 
         table_body+='</tbody></table>';
-        $("#response").html(table_body);
+        $("#response").html(table_body);  
 
       }
     });
   })
 
-  $("#splugOnCommandButton").click(function () {
-    console.log("+splugOnCommand");
+  $("#downButton").click(function () {
+    console.log("+downButton");
     $.ajax({
-      url: "https://open.hknetworks.kr/smarthome/controlDevice",
+      url: "https://open.hknetworks.kr/smarthome/getDeviceCapability",
       type: 'POST',
       dataType: "json", // 옵션이므로 JSON으로 받을게 아니면 안써도 됨
       contentType: "application/json; charset=utf-8",
-      data: JSON.stringify(splugOnCommand),
+      data: JSON.stringify(downButtonData),
       success: function (data) {
         console.log(data);
         var list = data.keyList;
@@ -120,17 +118,17 @@ $(function () {
     });
   })
 
-  $("#splugOffCommandButton").click(function () {
-    console.log("+splugOffCommand");
+  $("#stepButton").click(function () {
+    console.log("+stepButton");
     $.ajax({
       url: "https://open.hknetworks.kr/smarthome/controlDevice",
       type: 'POST',
       dataType: "json", // 옵션이므로 JSON으로 받을게 아니면 안써도 됨
       contentType: "application/json; charset=utf-8",
-      data: JSON.stringify(splugOffCommand),
+      data: JSON.stringify(stepButtonData),
       success: function (data) {
         console.log(data);
-
+        
         var table_body = '<table border="1" id="example"><thead><tr><th>status</th><th>msg</th></tr></thead><tbody>';
 
         table_body+='<tr>';
@@ -150,3 +148,4 @@ $(function () {
     });
   })
 })
+
