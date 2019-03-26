@@ -35,7 +35,7 @@ $(function () {
       }
   }
 
-  $("#statusButton").click(function () {
+  $("statusButton").click(function () {
     console.log("+queryDeviceStatus");
     $.ajax({
       url: "https://open.hknetworks.kr/smarthome/queryDeviceStatus",
@@ -82,7 +82,7 @@ $(function () {
     });
   })
 
-  $("#splugOnCommandButton").click(function () {
+  $("splugOnCommandButton").click(function () {
     console.log("+splugOnCommand");
     $.ajax({
       url: "https://open.hknetworks.kr/smarthome/controlDevice",
@@ -120,7 +120,7 @@ $(function () {
     });
   })
 
-  $("#splugOffCommandButton").click(function () {
+  $("splugOffCommandButton").click(function () {
     console.log("+splugOffCommand");
     $.ajax({
       url: "https://open.hknetworks.kr/smarthome/controlDevice",
