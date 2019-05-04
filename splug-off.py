@@ -12,8 +12,8 @@ data = {
 	"userid":"star@star.com",
 	"password":"iot123456",
 	"mac":"600194260a36",
-    "deviceId":"615458ebd5f1403fb42ded956d66c2cb",
-    "command":{
+        "deviceId":"615458ebd5f1403fb42ded956d66c2cb",
+        "command":{
         "type":"turnoff"
     }
 }
