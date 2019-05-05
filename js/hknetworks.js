@@ -6,7 +6,11 @@ $(function () {
   var userDeviceId = "615458ebd5f1403fb42ded956d66c2cb";
 
 
-  var getDeviceListData = { "userid": userId, "password": userPw }
+  var getDeviceListData = {
+    "userid": userId,
+    "password": userPw
+  }
+
   var queryDeviceStatusData = {
     "userid": userId,
     "password": userPw,
@@ -33,6 +37,21 @@ $(function () {
           "type":"turnoff"
       }
   }
+
+
+    $("#listButton").click(function () {
+  //    console.log("+queryDeviceStatus");
+      $.ajax({
+        url: "https://open.hknetworks.kr/smarthome/getDeviceList ",
+        type: 'POST',
+        dataType: "json", // 옵션이므로 JSON으로 받을게 아니면 안써도 됨
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(getDeviceListData),
+        success: function (data) {
+          console.log(data);
+        }
+      });
+    })
 
   $("#statusButton").click(function () {
 //    console.log("+queryDeviceStatus");
