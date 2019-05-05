@@ -1,0 +1,141 @@
+{
+	"id": "02225d07-98b6-d61b-6b90-1834d2ed7528",
+	"name": "hackathon",
+	"description": "",
+	"order": [
+		"cb40e70b-f736-cbfa-37f9-8c767872fe39",
+		"149f0b03-fac2-98a9-c622-3d6e95f73b5e",
+		"9f38af2a-9ead-e602-7b0d-ba86013579c7",
+		"f3d2e12d-cae8-a921-419f-b54b6dda7212"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1557045642876,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "149f0b03-fac2-98a9-c622-3d6e95f73b5e",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://open.hknetworks.kr/smarthome/queryDeviceStatus",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "02225d07-98b6-d61b-6b90-1834d2ed7528",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Device Status",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1557046198586,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n        \"userid\":\"star@star.com\",\n        \"password\":\"iot123456\",\n        \"mac\":\"600194260a36\",\n        \"deviceId\":\"615458ebd5f1403fb42ded956d66c2cb\"\n}\n\n"
+		},
+		{
+			"id": "9f38af2a-9ead-e602-7b0d-ba86013579c7",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://open.hknetworks.kr/smarthome/controlDevice",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "02225d07-98b6-d61b-6b90-1834d2ed7528",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Power ON",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1557046439822,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"userid\":\"star@star.com\",\n    \"password\":\"iot123456\",\n    \"mac\":\"600194260a36\",\n    \"deviceId\":\"615458ebd5f1403fb42ded956d66c2cb\",\n    \"command\":{\n    \"type\":\"turnon\"\n    }\n}"
+		},
+		{
+			"id": "cb40e70b-f736-cbfa-37f9-8c767872fe39",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://open.hknetworks.kr/smarthome/getDeviceList",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1557045984495,
+			"name": "Device List",
+			"description": "",
+			"collectionId": "02225d07-98b6-d61b-6b90-1834d2ed7528",
+			"responses": [],
+			"rawModeData": "{\n\t\"userid\":\"star@star.com\",\n\t\"password\":\"iot123456\"\n}\n"
+		},
+		{
+			"id": "f3d2e12d-cae8-a921-419f-b54b6dda7212",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://open.hknetworks.kr/smarthome/controlDevice",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "02225d07-98b6-d61b-6b90-1834d2ed7528",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Power OFF",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1557046601019,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n    \"userid\":\"star@star.com\",\n    \"password\":\"iot123456\",\n    \"mac\":\"600194260a36\",\n    \"deviceId\":\"615458ebd5f1403fb42ded956d66c2cb\",\n    \"command\":{\n    \"type\":\"turnoff\"\n    }\n}"
+		}
+	]
+}
